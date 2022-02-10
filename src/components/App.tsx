@@ -24,14 +24,18 @@ const App: React.FC = () => {
 
   return (
     <div>
+      {/*
       <ContactButton />
+      */}
       <Navbar offsetY={offsetY} />
       <TitlePg />
+      {/*
       <ObjectivesPg offsetY={offsetY} />
       <StatsPg offsetY={offsetY} />
       <PartnersPg />
       <NewsPg />
       <FooterPg offsetY={offsetY} />
+      */}
     </div>
   );
 };
