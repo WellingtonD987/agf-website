@@ -1,39 +1,86 @@
 .mainContainer {
   display: flex;
-  flex-direction: row;
-  padding-left: 5vw;
-  height: 150vh;
+  flex-direction: column;
 
-  margin-top: -30vh;
+  height: 150vh;
+  width: calc(100% - 80px);
+
+  margin: 40px;
+  //margin-top: -30vh;
+
+  @media only screen and (max-width: 840px) {
+    display: flex;
+    flex-direction: column;
+  }
+  @media only screen and (max-width: 425px) {
+    height: auto;
+  }
 
   .container {
-    width: 50%;
+    width: 60%;
+    height: 50%;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
 
+    @media only screen and (max-width: 840px) {
+      width: 100%;
+    }
+
     .title {
       font-size: 4vw;
-      line-height: 98%;
+      line-height: 99%;
       font-weight: 900;
-      width: 48vw;
+      @media only screen and (max-width: 1028px) {
+        font-size: 40px;
+      }
+      @media only screen and (max-width: 425px) {
+        font-size: 30px;
+      }
+
+      width: calc(100% - 20px);
 
       margin: 10px;
       margin-bottom: 5vw;
+      margin-right: 0;
+
+      .titleHighlight {
+        color: rgb(21, 189, 21);
+      }
     }
     .text {
       font-size: 1.5vw;
-      width: 40vw;
+      @media only screen and (max-width: 1028px) {
+        font-size: 18px;
+      }
 
+      width: calc(100% - 20px);
       margin: 10px;
+      margin-right: 0;
     }
-    .image {
-      background-color: yellowgreen;
-      width: 85%;
-      height: 50%;
+  }
+  .imageContainer {
+    width: 100%;
+    height: 50%;
 
-      margin-left: 3vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media only screen and (max-width: 425px) {
+      display: none;
+    }
+
+    .image {
+      background-color: rgb(31, 189, 0);
+      width: 80%;
+      height: 100%;
+
+      @media only screen and (max-width: 840px) {
+        width: 80%;
+        height: 100%;
+      }
     }
   }
 }

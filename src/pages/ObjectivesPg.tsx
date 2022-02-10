@@ -7,7 +7,10 @@ const ObjectivesPg: React.FC<{ offsetY: number }> = ({ offsetY }) => {
       <div className={styles.container}>
         <div className={styles.title}>
           We optimize your company objectives to fit the growing demands for
-          ecological sensitivity.
+          <span className={styles.titleHighlight}>
+            {" "}
+            ecological sensitivity.
+          </span>
         </div>
         <div className={styles.text}>
           We are a Financial Technology Consultancy Firm, that focuses on
@@ -19,7 +22,7 @@ const ObjectivesPg: React.FC<{ offsetY: number }> = ({ offsetY }) => {
           ecological awareness.
         </div>
       </div>
-      <div className={styles.container}>
+      <div className={styles.imageContainer}>
         <div
           className={styles.image}
           style={{ transform: `translateY(${(offsetY - 1400) * -0.5}px)` }}

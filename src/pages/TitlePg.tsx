@@ -9,6 +9,9 @@ const TitlePg = () => {
         <span className={styles.titleHighlight}> Green</span> FinTech Solutions,{" "}
         <br />
       </div>
+      <div className={styles.copyright}>
+        © 2021 AYRE GREEN FINANCE - All Rights Reserved
+      </div>
       <div className={styles.hero}></div>
     </div>
   );
