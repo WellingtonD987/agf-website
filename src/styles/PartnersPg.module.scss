@@ -1,0 +1,60 @@
+:root {
+  --number-of-cards: 6;
+
+  --card-margin: 10px;
+  --card-width: 300px;
+  --card-height: 200px;
+
+  --container-height: calc(
+    var(--card-margin) + var(--card-margin) + var(--card-height)
+  );
+  --container-width: calc(
+    ((2 * var(--card-margin)) + var(--card-width)) * var(--number-of-cards)
+  );
+}
+
+.mainContainer {
+  padding-top: 5vh;
+  .title {
+    font-size: 4vh;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+  }
+  .container {
+    overflow: hidden;
+    .cardContainerA {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+
+      transform: translateX(0);
+    }
+    .cardContainerB {
+      margin-top: calc(-1 * var(--container-height));
+
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+
+      transform: translateX(calc(-1 * var(--container-width)));
+    }
+  }
+}
+
+.card {
+  width: var(--card-width);
+  height: var(--card-height);
+  margin: var(--card-margin);
+
+  animation: conveyorBelt 20s linear infinite;
+}
+@keyframes conveyorBelt {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(var(--container-width));
+  }
+}

@@ -1,0 +1,26 @@
+.container {
+  padding-top: 200px;
+  width: calc(100% - 40px);
+
+  .title {
+    font-size: 6vw;
+    line-height: 90%;
+    font-weight: 900;
+    width: 90vw;
+    min-height: 100px;
+
+    padding-left: 5vw;
+    .titleHighlight {
+      color: green;
+    }
+  }
+
+  .hero {
+    background-color: rgb(149, 191, 238);
+
+    height: 100vh;
+    width: 100%;
+
+    margin: 20px 0px 20px 40px;
+  }
+}

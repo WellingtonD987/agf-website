@@ -1,0 +1,34 @@
+.container {
+  padding: 10vh 0;
+  margin: 0 40px;
+
+  width: calc(100% - 80px);
+
+  .titleContainer {
+    font-size: 4vw;
+    line-height: 98%;
+    font-weight: 900;
+    width: 48vw;
+
+    margin: 10px;
+  }
+  .description {
+    font-size: 1.5vw;
+    width: 40vw;
+
+    margin: 10px;
+  }
+  .newsContainer {
+    background-color: rgb(150, 26, 167);
+
+    height: 60vh;
+    width: 100%;
+  }
+  .newsButtons {
+    background-color: rgb(212, 42, 12);
+    height: 10vh;
+    width: 50%;
+
+    margin: 5vh 0;
+  }
+}

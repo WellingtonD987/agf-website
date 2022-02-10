@@ -1,0 +1,147 @@
+.showPg {
+  color: white;
+
+  position: fixed;
+  z-index: 999;
+  width: 100vw;
+  height: 100vh;
+}
+.hiddenPg {
+  display: none;
+}
+
+.title {
+  width: calc(100vw - 200px);
+  height: 200px;
+
+  padding: 0 50px;
+
+  line-height: 90%;
+  font-weight: bold;
+  font-size: 100px;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  .copyright {
+    line-height: 90%;
+    font-weight: bold;
+    font-size: 10px;
+    text-align: left;
+  }
+}
+.container {
+  width: 100vw;
+  height: calc(100vh - 200px);
+
+  display: flex;
+  flex-direction: row;
+  .content {
+    width: calc(100vw - 200px);
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    .image {
+      background-color: rgb(180, 0, 216);
+      width: 50%;
+      height: 90%;
+      margin: 0 3vw;
+    }
+    .textContainer {
+      width: 50%;
+      height: 100%;
+
+      display: flex;
+      flex-direction: column;
+      .description {
+        width: 100%;
+        height: 20%;
+
+        font-size: 2vw;
+        line-height: 98%;
+      }
+      .location {
+        width: 100%;
+        height: 20%;
+        display: flex;
+        flex-direction: row;
+        .locationTitle {
+          font-size: 3.5vw;
+        }
+        .locationAddress {
+          margin-left: 5vw;
+        }
+      }
+      .btnContainer {
+        width: 100%;
+        height: 30%;
+
+        display: flex;
+        flex-direction: row;
+        .emailBtn {
+          background-color: rgb(0, 112, 216);
+          border-radius: 50%;
+          width: 150px;
+          height: 150px;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .callBtn {
+          background-color: rgb(19, 173, 45);
+          border-radius: 50%;
+          width: 150px;
+          height: 150px;
+          margin-left: 3vw;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+      .signUpContainer {
+        background-color: rgb(50, 92, 131);
+        width: 100%;
+        height: 20%;
+      }
+    }
+  }
+  .socials {
+    width: 200px;
+    height: 90%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .instagram {
+      background-color: rgb(48, 48, 48);
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+    }
+    .facebook {
+      background-color: rgb(48, 48, 48);
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+    }
+    .twitter {
+      background-color: rgb(48, 48, 48);
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+    }
+    .linkedIn {
+      background-color: rgb(48, 48, 48);
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+    }
+  }
+}
