@@ -9,7 +9,13 @@ const Navbar: React.FC<{
   offsetY: number;
   isTitlePgVisible: boolean;
   isObjectivesPgVisible: boolean;
-}> = ({ offsetY, isTitlePgVisible, isObjectivesPgVisible }) => {
+  isStatsPgVisible: boolean;
+}> = ({
+  offsetY,
+  isTitlePgVisible,
+  isObjectivesPgVisible,
+  isStatsPgVisible,
+}) => {
   const handleTitlePg = () => {
     return isTitlePgVisible
       ? {
@@ -18,11 +24,18 @@ const Navbar: React.FC<{
       : {};
   };
   const handleObjectivesPg = () => {
-    return isObjectivesPgVisible
-      ? {
-          height: `50vh`,
-        }
-      : {};
+    var style = {};
+    if (isObjectivesPgVisible && !isTitlePgVisible) {
+      style = { height: `50vh` };
+    }
+    return style;
+  };
+  const handleStatsPg = () => {
+    var style = {};
+    if (isStatsPgVisible && !isObjectivesPgVisible) {
+      style = { height: `50vh` };
+    }
+    return style;
   };
 
   return (
@@ -43,7 +56,7 @@ const Navbar: React.FC<{
       <div className={styles.progressBar}>
         <div style={handleTitlePg()}></div>
         <div style={handleObjectivesPg()}></div>
-        <div className={styles.progressDot}></div>
+        <div style={handleStatsPg()}></div>
         <div className={styles.progressDot}></div>
         <div className={styles.progressDot}></div>
         <div className={styles.progressDot}></div>

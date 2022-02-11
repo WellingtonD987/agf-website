@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { useIntersectionObserver } from "usehooks-ts";
+
 import styles from "../styles/ObjectivesPg.module.scss";
 
 const ObjectivesPg: React.FC<{

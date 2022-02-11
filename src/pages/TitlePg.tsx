@@ -12,8 +12,8 @@ const TitlePg: React.FC<{
   setIsVisible(isVisible);
 
   return (
-    <div className={styles.container}>
-      <div className={styles.title} ref={ref}>
+    <div className={styles.container} ref={ref}>
+      <div className={styles.title}>
         The Global Leader for
         <span className={styles.titleHighlight}> Green</span> FinTech Solutions,{" "}
         <br />

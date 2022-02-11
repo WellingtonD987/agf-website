@@ -26,6 +26,7 @@ const App: React.FC = () => {
 
   const [isTitlePgVisible, setIsTitlePgVisible] = useState(false);
   const [isObjectivesPgVisible, setIsObjectivesPgVisible] = useState(false);
+  const [isStatsPgVisible, setIsStatsPgVisible] = useState(false);
 
   return (
     <div>
@@ -33,14 +34,15 @@ const App: React.FC = () => {
         offsetY={offsetY}
         isTitlePgVisible={isTitlePgVisible}
         isObjectivesPgVisible={isObjectivesPgVisible}
+        isStatsPgVisible={isStatsPgVisible}
       />
       {/*
       <ContactButton />
       */}
       <TitlePg setIsVisible={setIsTitlePgVisible} />
       <ObjectivesPg offsetY={offsetY} setIsVisible={setIsObjectivesPgVisible} />
+      <StatsPg offsetY={offsetY} setIsVisible={setIsStatsPgVisible} />
       {/*
-      <StatsPg offsetY={offsetY} />
       <PartnersPg />
       <NewsPg />
       <FooterPg offsetY={offsetY} />
