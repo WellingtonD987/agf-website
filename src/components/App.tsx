@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { useIntersectionObserver } from "usehooks-ts";
+
 import styles from "../styles/App.module.scss";
 import loadStyles from "../styles/LoadAnimations.module.scss";
 
@@ -22,14 +24,21 @@ const App: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const [isTitlePgVisible, setIsTitlePgVisible] = useState(false);
+  const [isObjectivesPgVisible, setIsObjectivesPgVisible] = useState(false);
+
   return (
     <div>
-      <Navbar offsetY={offsetY} />
+      <Navbar
+        offsetY={offsetY}
+        isTitlePgVisible={isTitlePgVisible}
+        isObjectivesPgVisible={isObjectivesPgVisible}
+      />
       {/*
       <ContactButton />
       */}
-      <TitlePg />
-      <ObjectivesPg offsetY={offsetY} />
+      <TitlePg setIsVisible={setIsTitlePgVisible} />
+      <ObjectivesPg offsetY={offsetY} setIsVisible={setIsObjectivesPgVisible} />
       {/*
       <StatsPg offsetY={offsetY} />
       <PartnersPg />
