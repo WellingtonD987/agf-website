@@ -8,9 +8,7 @@ const PartnersPg = () => {
   return (
     <div className={styles.mainContainer}>
       <div>
-        <div className={styles.title}>
-          Partners who are making a difference, with AGF
-        </div>
+        <div className={styles.title}>AGF PARTNERS</div>
       </div>
       <div className={styles.container}>
         <div className={styles.cardContainerA}>

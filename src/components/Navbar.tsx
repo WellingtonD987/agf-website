@@ -10,22 +10,24 @@ const Navbar: React.FC<{
   isTitlePgVisible: boolean;
   isObjectivesPgVisible: boolean;
   isStatsPgVisible: boolean;
+  isNewsPgVisible: boolean;
 }> = ({
   offsetY,
   isTitlePgVisible,
   isObjectivesPgVisible,
   isStatsPgVisible,
+  isNewsPgVisible,
 }) => {
   const handleTitlePg = () => {
-    return isTitlePgVisible
-      ? {
-          height: `50vh`,
-        }
-      : {};
+    var style = {};
+    if (isTitlePgVisible && !isObjectivesPgVisible) {
+      style = { height: `50vh` };
+    }
+    return style;
   };
   const handleObjectivesPg = () => {
     var style = {};
-    if (isObjectivesPgVisible && !isTitlePgVisible) {
+    if (isObjectivesPgVisible) {
       style = { height: `50vh` };
     }
     return style;
@@ -33,6 +35,13 @@ const Navbar: React.FC<{
   const handleStatsPg = () => {
     var style = {};
     if (isStatsPgVisible && !isObjectivesPgVisible) {
+      style = { height: `50vh` };
+    }
+    return style;
+  };
+  const handleNewsPg = () => {
+    var style = {};
+    if (isNewsPgVisible && !isStatsPgVisible) {
       style = { height: `50vh` };
     }
     return style;
@@ -57,9 +66,7 @@ const Navbar: React.FC<{
         <div style={handleTitlePg()}></div>
         <div style={handleObjectivesPg()}></div>
         <div style={handleStatsPg()}></div>
-        <div className={styles.progressDot}></div>
-        <div className={styles.progressDot}></div>
-        <div className={styles.progressDot}></div>
+        <div style={handleNewsPg()}></div>
       </div>
     </div>
   );

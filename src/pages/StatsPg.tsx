@@ -17,24 +17,37 @@ const StatsPg: React.FC<{
   const [offsetRoot, setOffsetRoot] = useState(0);
   const [firstEntry, setFirstEntry] = useState(true);
   if (isVisible && firstEntry) {
-    console.log("Please Reload Page if Resizing Window to adjust OffsetFactor");
+    console.log("start!");
     setOffsetRoot(offsetY);
     setFirstEntry(false);
   }
-  //console.log(offsetY - offsetRoot, offsetY - 2200, offsetY, offsetRoot);
+
+  let height = 200;
+  let deltaOffset = offsetY - offsetRoot;
+
+  const handleHeroA = () => {
+    const translateSpeed = 0.6;
+    var translateFactor = -height + deltaOffset * translateSpeed;
+    return translateFactor;
+  };
+  const handleHeroB = () => {
+    var translateSpeed = 0.7;
+    var translateFactor = -height + deltaOffset * translateSpeed;
+    return translateFactor;
+  };
 
   return (
-    <div className={styles.mainContainer}>
+    <div className={styles.mainContainer} ref={ref}>
       <div className={styles.description}>
         In the 2020-21 fiscal year, AGF worked with our trusted partners to
         achieve, on average:
       </div>
-      <div className={styles.container} ref={ref}>
+      <div className={styles.container}>
         <div className={styles.heroA}>
           <div
             className={styles.text}
             style={{
-              transform: `translateY(${(offsetY - offsetRoot) * 0.6}px)`,
+              transform: `translateY(${handleHeroA()}px)`,
             }}
           >
             27% <span>increase in financial productivity</span>
@@ -43,9 +56,7 @@ const StatsPg: React.FC<{
         <div className={styles.heroB}>
           <div
             className={styles.text}
-            style={{
-              transform: `translateY(${(offsetY - offsetRoot) * 0.5}px)`,
-            }}
+            style={{ transform: `translateY(${handleHeroB()}px)` }}
           >
             42% <span>decrease in carbon emmisions</span>
           </div>
