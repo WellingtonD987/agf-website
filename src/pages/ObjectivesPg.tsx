@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { useIntersectionObserver } from "usehooks-ts";
 
 import styles from "../styles/ObjectivesPg.module.scss";
@@ -11,7 +11,9 @@ const ObjectivesPg: React.FC<{
   const ref = useRef<HTMLDivElement | null>(null);
   const entry = useIntersectionObserver(ref, {});
   const isVisible = !!entry?.isIntersecting;
-  setIsVisible(isVisible);
+  useEffect(() => {
+    setIsVisible(isVisible);
+  }, [isVisible, setIsVisible]);
 
   // im calling defeat and letting this number exist...
   const offsetRoot = 1500;

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { useIntersectionObserver } from "usehooks-ts";
 import styles from "../styles/NewsPg.module.scss";
 
@@ -9,7 +9,9 @@ const NewsPg: React.FC<{
   const ref = useRef<HTMLDivElement | null>(null);
   const entry = useIntersectionObserver(ref, {});
   const isVisible = !!entry?.isIntersecting;
-  setIsVisible(isVisible);
+  useEffect(() => {
+    setIsVisible(isVisible);
+  }, [isVisible, setIsVisible]);
 
   return (
     <div className={styles.container} ref={ref}>

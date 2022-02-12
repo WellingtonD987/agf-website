@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useIntersectionObserver } from "usehooks-ts";
 import styles from "../styles/TitlePg.module.scss";
 
@@ -9,7 +9,9 @@ const TitlePg: React.FC<{
   const ref = useRef<HTMLDivElement | null>(null);
   const entry = useIntersectionObserver(ref, {});
   const isVisible = !!entry?.isIntersecting;
-  setIsVisible(isVisible);
+  useEffect(() => {
+    setIsVisible(isVisible);
+  }, [isVisible, setIsVisible]);
 
   return (
     <div className={styles.container} ref={ref}>

@@ -29,6 +29,15 @@ const App: React.FC = () => {
   const [isStatsPgVisible, setIsStatsPgVisible] = useState(false);
   const [isNewsPgVisible, setIsNewsPgVisible] = useState(false);
 
+  const [showContactPg, setShowContactPg] = useState(false);
+  useEffect(() => {
+    if (showContactPg) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [showContactPg]);
+
   return (
     <div>
       <Navbar
@@ -38,17 +47,23 @@ const App: React.FC = () => {
         isStatsPgVisible={isStatsPgVisible}
         isNewsPgVisible={isNewsPgVisible}
       />
-      {/*
-      <ContactButton />
-      */}
-      <TitlePg setIsVisible={setIsTitlePgVisible} />
-      <ObjectivesPg offsetY={offsetY} setIsVisible={setIsObjectivesPgVisible} />
-      <StatsPg offsetY={offsetY} setIsVisible={setIsStatsPgVisible} />
-      <PartnersPg />
-      <NewsPg setIsVisible={setIsNewsPgVisible} />
-      {/*
+      <ContactButton
+        isVisible={showContactPg}
+        setIsVisible={setShowContactPg}
+      />
+      <div>
+        <TitlePg setIsVisible={setIsTitlePgVisible} />
+        <ObjectivesPg
+          offsetY={offsetY}
+          setIsVisible={setIsObjectivesPgVisible}
+        />
+        <StatsPg offsetY={offsetY} setIsVisible={setIsStatsPgVisible} />
+        <PartnersPg />
+        <NewsPg setIsVisible={setIsNewsPgVisible} />
+        {/*
       <FooterPg offsetY={offsetY} />
       */}
+      </div>
     </div>
   );
 };

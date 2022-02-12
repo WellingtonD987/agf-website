@@ -1,16 +1,32 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../styles/ContactPg.module.scss";
+import buttonStyles from "../styles/ContactButton.module.scss";
 
-const ContactUsPg: React.FC<{ showContactPg: boolean }> = ({
-  showContactPg,
-}) => {
+const ContactUsPg: React.FC<{
+  isVisible: boolean;
+  setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
+}> = ({ isVisible, setIsVisible }) => {
+  function swapState() {
+    isVisible === false ? setIsVisible(true) : setIsVisible(false);
+  }
+
   return (
-    <div className={showContactPg ? styles.showPg : styles.hiddenPg}>
-      <div className={styles.title}>
-        <div>AYRE GREEN FINANCE</div>
-        <div className={styles.copyright}>
-          © 2021 AYRE GREEN FINANCE - All Rights Reserved <br />
-          Created by Wellington Q. Dulay
+    <div className={isVisible ? styles.showPg : styles.hiddenPg}>
+      <div className={styles.upper}>
+        <div className={styles.title}>
+          <div>AYRE GREEN FINANCE</div>
+          <div className={styles.copyright}>
+            © 2021 AYRE GREEN FINANCE - All Rights Reserved <br />
+            Created by Wellington Q. Dulay
+          </div>
+        </div>
+        <div className={buttonStyles.container} onClick={() => swapState()}>
+          <div
+            className={buttonStyles.button}
+            style={{ backgroundColor: "grey" }}
+          >
+            CLOSE
+          </div>
         </div>
       </div>
       <div className={styles.container}>

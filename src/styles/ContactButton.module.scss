@@ -1,70 +1,58 @@
 // https://www.robinwieruch.de/create-react-app-with-sass-support/
 // https://www.youtube.com/watch?v=4cXgXZ3Tf0s
 .mainContainer {
+  // this outer wrapper exists if there is any additional buttons
   position: relative;
   z-index: 999;
-
-  .container {
-    color: rgb(255, 255, 255);
-
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100%;
-
-    // my weird solution...
-    display: flex;
-    justify-content: flex-end;
-  }
 }
 
-// https://balsamiq.com/learn/articles/button-design-best-practices/
-// https://balsamiq.com/learn/articles/sign-up-flow/
-.button {
-  background-color: #378314;
-  cursor: pointer;
-  border-radius: 50%;
+.container {
+  color: rgb(255, 255, 255);
+  //background-color: aqua;
 
-  // https://stackoverflow.com/questions/13788192/stop-div-container-from-resizing/13788336
-  // set px values to calculations according to the viewport
-  // dont forget that width and height exists L0L!
   position: fixed;
-  width: 150px;
-  height: 150px;
-  margin: 25px;
+  top: 0;
+  right: 0;
+
+  width: 200px;
+  @media only screen and (max-width: 767px) {
+    width: auto;
+    margin-right: 10px;
+  }
+  height: 200px;
 
   display: flex;
-  align-items: center;
   justify-content: center;
-}
-.button:focus,
-.button:hover {
-  box-shadow: 5px 5px 16px 5px rgba(0, 0, 0, 0.42);
-}
+  align-items: center;
+  text-align: center;
 
-:root {
-  --animation-duration: 1s;
-}
-
-.backgroundContainer {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-
-  // we assume that no browser is larger than 50*SIZE_OF_BUTTON
-  .pageBackground {
-    z-index: 999;
-    background-color: rgb(36, 36, 36);
+  // https://balsamiq.com/learn/articles/button-design-best-practices/
+  // https://balsamiq.com/learn/articles/sign-up-flow/
+  .button {
+    background-color: #378314;
     border-radius: 50%;
+    cursor: pointer;
 
-    // exact copy of .button + .container
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 150px;
-    height: 150px;
-    margin: 25px;
+    // https://stackoverflow.com/questions/13788192/stop-div-container-from-resizing/13788336
+    // set px values to calculations according to the viewport
+    // dont forget that width and height exists L0L!
+    width: 14vw;
+    height: 14vw;
+    @media only screen and (max-width: 767px) {
+      width: 100px;
+      height: 100px;
+    }
+    max-width: 190px;
+    max-height: 190px;
 
-    transition: all 1s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    //transition: all 1s ease-in-out;
+  }
+  .button:focus,
+  .button:hover {
   }
 }

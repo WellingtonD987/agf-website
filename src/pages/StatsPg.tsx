@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useIntersectionObserver } from "usehooks-ts";
 
 import styles from "../styles/StatsPg.module.scss";
@@ -11,7 +11,9 @@ const StatsPg: React.FC<{
   const ref = useRef<HTMLDivElement | null>(null);
   const entry = useIntersectionObserver(ref, {});
   const isVisible = !!entry?.isIntersecting;
-  setIsVisible(isVisible);
+  useEffect(() => {
+    setIsVisible(isVisible);
+  }, [isVisible, setIsVisible]);
 
   // hacky way...
   const [offsetRoot, setOffsetRoot] = useState(0);
