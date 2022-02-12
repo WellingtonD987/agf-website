@@ -50,9 +50,6 @@
     align-items: center;
     justify-content: center;
 
-    //transition: all 1s ease-in-out;
-  }
-  .button:focus,
-  .button:hover {
+    transition: all 1s ease-in-out;
   }
 }

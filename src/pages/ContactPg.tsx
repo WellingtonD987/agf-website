@@ -10,8 +10,24 @@ const ContactUsPg: React.FC<{
     isVisible === false ? setIsVisible(true) : setIsVisible(false);
   }
 
+  const [isHidden, setIsHidden] = useState(true);
+  const handleAnimationEnd = () => {
+    var styleTag = {};
+    if (isHidden) styleTag = { display: "none" };
+    return styleTag;
+  };
+  useEffect(() => {
+    if (isVisible) setIsHidden(false);
+  }, [isVisible]);
+
   return (
-    <div className={isVisible ? styles.showPg : styles.hiddenPg}>
+    <div
+      className={isVisible ? styles.showPg : styles.hiddenPg}
+      onAnimationEnd={() => {
+        if (!isVisible) setIsHidden(true);
+      }}
+      style={handleAnimationEnd()}
+    >
       <div className={styles.upper}>
         <div className={styles.title}>
           <div>AYRE GREEN FINANCE</div>

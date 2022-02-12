@@ -28,6 +28,7 @@ const App: React.FC = () => {
   const [isObjectivesPgVisible, setIsObjectivesPgVisible] = useState(false);
   const [isStatsPgVisible, setIsStatsPgVisible] = useState(false);
   const [isNewsPgVisible, setIsNewsPgVisible] = useState(false);
+  const [isFooterPgVisible, setIsFooterPgVisible] = useState(false);
 
   const [showContactPg, setShowContactPg] = useState(false);
   useEffect(() => {
@@ -46,6 +47,7 @@ const App: React.FC = () => {
         isObjectivesPgVisible={isObjectivesPgVisible}
         isStatsPgVisible={isStatsPgVisible}
         isNewsPgVisible={isNewsPgVisible}
+        isFooterPgVisible={isFooterPgVisible}
       />
       <ContactButton
         isVisible={showContactPg}
@@ -60,9 +62,7 @@ const App: React.FC = () => {
         <StatsPg offsetY={offsetY} setIsVisible={setIsStatsPgVisible} />
         <PartnersPg />
         <NewsPg setIsVisible={setIsNewsPgVisible} />
-        {/*
-      <FooterPg offsetY={offsetY} />
-      */}
+        <FooterPg offsetY={offsetY} setIsVisible={setIsFooterPgVisible} />
       </div>
     </div>
   );

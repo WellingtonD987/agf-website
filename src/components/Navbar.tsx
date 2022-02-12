@@ -11,12 +11,14 @@ const Navbar: React.FC<{
   isObjectivesPgVisible: boolean;
   isStatsPgVisible: boolean;
   isNewsPgVisible: boolean;
+  isFooterPgVisible: boolean;
 }> = ({
   offsetY,
   isTitlePgVisible,
   isObjectivesPgVisible,
   isStatsPgVisible,
   isNewsPgVisible,
+  isFooterPgVisible,
 }) => {
   const handleTitlePg = () => {
     var style = {};
@@ -41,18 +43,34 @@ const Navbar: React.FC<{
   };
   const handleNewsPg = () => {
     var style = {};
-    if (isNewsPgVisible && !isStatsPgVisible) {
+    if (isNewsPgVisible && !isStatsPgVisible && !isFooterPgVisible) {
+      style = { height: `50vh` };
+    }
+    return style;
+  };
+  const handleFooterPg = () => {
+    var style = {};
+    if (isFooterPgVisible) {
       style = { height: `50vh` };
     }
     return style;
   };
 
+  const handleNavbar = () => {
+    var factor = (-1 * offsetY) / 100 + 1;
+    if (factor < 0)
+      return {
+        opacity: `calc(${offsetY - document.body.clientHeight} / ${
+          window.innerHeight
+        })`,
+      };
+
+    return { opacity: `${factor}` };
+  };
+
   return (
     <div className={styles.mainContainer}>
-      <div
-        className={styles.logoBig}
-        style={{ opacity: `${(-1 * offsetY) / 100 + 1}` }}
-      >
+      <div className={styles.logoBig} style={handleNavbar()}>
         AYRE <br />
         GREEN <br />
         FINANCE <br />
@@ -67,6 +85,7 @@ const Navbar: React.FC<{
         <div style={handleObjectivesPg()}></div>
         <div style={handleStatsPg()}></div>
         <div style={handleNewsPg()}></div>
+        <div style={handleFooterPg()}></div>
       </div>
     </div>
   );

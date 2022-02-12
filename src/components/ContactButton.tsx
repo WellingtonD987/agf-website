@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "../styles/ContactButton.module.scss";
 
 import ContactUsPg from "../pages/ContactPg";
@@ -11,15 +11,6 @@ const ContactButton: React.FC<{
   const ContactBtn = () => (
     <div className={styles.container} onClick={() => swapState()}>
       <div className={styles.button}>CONTACT US</div>
-    </div>
-  );
-  const ContactPg = () => (
-    <div style={{ display: "none" }}>
-      <div className={styles.container} onClick={() => swapState()}>
-        <div className={styles.button} style={{ backgroundColor: "grey" }}>
-          CLOSE
-        </div>
-      </div>
     </div>
   );
 
@@ -49,7 +40,7 @@ const ContactButton: React.FC<{
           <div className={styles.button} style={handleBackground()}></div>
         </div>
         <ContactUsPg isVisible={isVisible} setIsVisible={setIsVisible} />
-        {isVisible ? <ContactPg /> : <ContactBtn />}
+        {isVisible ? <div style={{ display: "none" }} /> : <ContactBtn />}
         {/*
         <div className={styles.container}>
           <div className={styles.button}>NEWS</div>
