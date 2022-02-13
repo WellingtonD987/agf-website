@@ -39,6 +39,10 @@ const App: React.FC = () => {
     }
   }, [showContactPg]);
 
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <div>
       <Navbar

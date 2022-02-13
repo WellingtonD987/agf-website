@@ -29,9 +29,10 @@
   // https://balsamiq.com/learn/articles/button-design-best-practices/
   // https://balsamiq.com/learn/articles/sign-up-flow/
   .button {
-    background-color: #378314;
+    background-color: rgb(0, 158, 0);
     border-radius: 50%;
     cursor: pointer;
+    font-weight: bold;
 
     // https://stackoverflow.com/questions/13788192/stop-div-container-from-resizing/13788336
     // set px values to calculations according to the viewport

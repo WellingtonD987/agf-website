@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useIntersectionObserver } from "usehooks-ts";
 import styles from "../styles/FooterPg.module.scss";
-import buttonStyles from "../styles/ContactButton.module.scss";
+import { ReactComponent as Arrow } from "../svg/upper-right-arrow-svgrepo-com.svg";
 
 const FooterPg: React.FC<{
   setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
@@ -38,12 +38,7 @@ const FooterPg: React.FC<{
         ref={ref}
       ></div>
       <div className={styles.contentContainer}>
-        <div className={styles.action} style={{ display: "none" }}>
-          Contact us to Find Out More<div className={styles.arrow}></div>
-          <div className={styles.buttonSpaceContainer}>
-            <div className={styles.buttonSpace}></div>
-          </div>
-        </div>
+        <div className={styles.action}>Contact us to Find Out More</div>
         <div className={styles.title}>
           SUSTAINABLE SOLUTIONS
           <div className={styles.copyright}>

@@ -20,6 +20,10 @@ const ContactUsPg: React.FC<{
     if (isVisible) setIsHidden(false);
   }, [isVisible]);
 
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <div
       className={isVisible ? styles.showPg : styles.hiddenPg}

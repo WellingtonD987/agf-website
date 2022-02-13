@@ -41,8 +41,8 @@ const StatsPg: React.FC<{
   return (
     <div className={styles.mainContainer} ref={ref}>
       <div className={styles.description}>
-        In the 2020-21 fiscal year, AGF worked with our trusted partners to
-        achieve, on average:
+        In the 2020-21 fiscal year, AGF worked with our partners to achieve, on
+        average:
       </div>
       <div className={styles.container}>
         <div className={styles.heroA}>

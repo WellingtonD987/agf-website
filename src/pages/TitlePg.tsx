@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useIntersectionObserver } from "usehooks-ts";
 import styles from "../styles/TitlePg.module.scss";
+import headerVideo from "../video/clouds.mp4";
 
 const TitlePg: React.FC<{
   setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
