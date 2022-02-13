@@ -6,15 +6,22 @@
 
   .titleContainer {
     font-size: 4vw;
-    line-height: 98%;
+    line-height: 99%;
     font-weight: 900;
-    width: 48vw;
+    @media only screen and (max-width: 1028px) {
+      font-size: 40px;
+    }
+    @media only screen and (max-width: 425px) {
+      font-size: 30px;
+    }
 
     margin: 10px;
   }
   .description {
     font-size: 1.5vw;
-    width: 40vw;
+    @media only screen and (max-width: 1028px) {
+      font-size: 18px;
+    }
 
     margin: 10px;
   }

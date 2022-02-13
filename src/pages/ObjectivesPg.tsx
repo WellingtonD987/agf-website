@@ -1,13 +1,32 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import { useIntersectionObserver } from "usehooks-ts";
+
 import styles from "../styles/ObjectivesPg.module.scss";
 
-const ObjectivesPg: React.FC<{ offsetY: number }> = ({ offsetY }) => {
+const ObjectivesPg: React.FC<{
+  setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
+  offsetY: number;
+}> = ({ offsetY, setIsVisible }) => {
+  // https://usehooks-ts.com/react-hook/use-intersection-observer
+  const ref = useRef<HTMLDivElement | null>(null);
+  const entry = useIntersectionObserver(ref, {});
+  const isVisible = !!entry?.isIntersecting;
+  useEffect(() => {
+    setIsVisible(isVisible);
+  }, [isVisible, setIsVisible]);
+
+  // im calling defeat and letting this number exist...
+  const offsetRoot = 1500;
+
   return (
     <div className={styles.mainContainer}>
-      <div className={styles.container}>
+      <div className={styles.container} ref={ref}>
         <div className={styles.title}>
           We optimize your company objectives to fit the growing demands for
-          ecological sensitivity.
+          <span className={styles.titleHighlight}>
+            {" "}
+            ecological sensitivity.
+          </span>
         </div>
         <div className={styles.text}>
           We are a Financial Technology Consultancy Firm, that focuses on
@@ -19,10 +38,12 @@ const ObjectivesPg: React.FC<{ offsetY: number }> = ({ offsetY }) => {
           ecological awareness.
         </div>
       </div>
-      <div className={styles.container}>
+      <div className={styles.imageContainer}>
         <div
           className={styles.image}
-          style={{ transform: `translateY(${(offsetY - 1400) * -0.5}px)` }}
+          style={{
+            transform: `translateY(${(offsetY - offsetRoot) * -0.4}px)`,
+          }}
         ></div>
       </div>
     </div>
