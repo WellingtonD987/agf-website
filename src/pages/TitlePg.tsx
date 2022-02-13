@@ -24,7 +24,10 @@ const TitlePg: React.FC<{
       <div className={styles.copyright}>
         © 2021 AYRE GREEN FINANCE - All Rights Reserved
       </div>
-      <div className={styles.hero}></div>
+      {/*https://youtu.be/PYFltdGJ-Rc */}
+      <video className={styles.hero} autoPlay loop muted>
+        <source src={headerVideo} type="video/mp4" />
+      </video>
     </div>
   );
 };

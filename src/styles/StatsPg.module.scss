@@ -29,6 +29,8 @@
 
     .heroA {
       background-color: rgb(0, 14, 90);
+      background-image: url("../images/techCity.jpg");
+      background-size: cover;
 
       height: calc(100% - 40px);
       width: 50%;
@@ -63,6 +65,8 @@
 
     .heroB {
       background-color: rgb(95, 0, 0);
+      background-image: url("../images/ecoCity.jpg");
+      background-size: cover;
 
       height: calc(100% - 40px);
       width: 50%;

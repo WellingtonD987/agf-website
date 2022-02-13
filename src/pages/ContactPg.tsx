@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "../styles/ContactPg.module.scss";
 import buttonStyles from "../styles/ContactButton.module.scss";
+import image from "../images/businessPeople.jpg";
 
 const ContactUsPg: React.FC<{
   isVisible: boolean;
@@ -51,7 +52,7 @@ const ContactUsPg: React.FC<{
       </div>
       <div className={styles.container}>
         <div className={styles.content}>
-          <div className={styles.image}></div>
+          <img src={image} alt="business people" className={styles.image}></img>
           <div className={styles.textContainer}>
             <div className={styles.description}>
               Lets create sustainable solutions, together. Schedule an

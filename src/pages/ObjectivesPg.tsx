@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { useIntersectionObserver } from "usehooks-ts";
 
 import styles from "../styles/ObjectivesPg.module.scss";
+import image from "../images/space.jpg";
 
 const ObjectivesPg: React.FC<{
   setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
@@ -39,12 +40,14 @@ const ObjectivesPg: React.FC<{
         </div>
       </div>
       <div className={styles.imageContainer}>
-        <div
+        <img
+          alt="space"
+          src={image}
           className={styles.image}
           style={{
             transform: `translateY(${(offsetY - offsetRoot) * -0.4}px)`,
           }}
-        ></div>
+        ></img>
       </div>
     </div>
   );
