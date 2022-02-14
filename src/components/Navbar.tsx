@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useEffectOnce } from "usehooks-ts";
 import styles from "../styles/Navbar.module.scss";
 
 // incredible parralax explaination: https://www.youtube.com/watch?v=Q5y6pwoE3cM
@@ -69,18 +70,17 @@ const Navbar: React.FC<{
     return { opacity: `${factor}` };
   };
   */
-  const handleNavbar = () => {
-    var style = {};
-    if (offsetY > 50)
-      style = {
-        color: "rgba(0,0,0,0)",
-      };
-    return style;
-  };
+
+  /*
+  const [navbarFactor, setNavbarFactor] = useState(0);
+  useEffect(() => {
+    window.innerHeight > 768 ? setNavbarFactor(500) : setNavbarFactor(50);
+  }, []);
+
 
   const handleMainContainer = () => {
     var style = {};
-    if (offsetY > 50)
+    if (offsetY > navbarFactor)
       style = {
         borderRight: "1px solid rgba(0, 0, 0, 1)",
         width: "20px",
@@ -90,17 +90,99 @@ const Navbar: React.FC<{
 
   const handleVerticalButtons = () => {
     var style = {};
-    if (offsetY > 50)
+    if (offsetY > navbarFactor)
       style = {
         display: "none",
       };
+    return style;
+  };
+  */
+
+  /* 
+  there are 3 states to this navbar: 
+   - STATE 0: vertical navBar (always & when hovered)
+   - STATE 1: closed vertical navBar (always when offset > 500)
+   - STATE 2: horizontal navBar (always when window.width < 768)
+   - STATE 3: closed horizontal navBar 
+  */
+  const [isOpen, setIsOpen] = useState(false);
+  const navbarFactor = 50;
+
+  const handleMainContainer = () => {
+    var style = {};
+    if (offsetY > navbarFactor && isOpen) {
+      style = {
+        borderRight: "1px solid rgba(0, 0, 0, 1)",
+      };
+    } else if (offsetY > navbarFactor) {
+      style = {
+        borderRight: "1px solid rgba(0, 0, 0, 1)",
+        width: "20px",
+      };
+    }
+    return style;
+  };
+  const handleLogoBig = () => {
+    var style = {};
+    if (offsetY > navbarFactor && !isOpen) {
+      style = {
+        color: "rgba(0,0,0,0)",
+      };
+    }
+    return style;
+  };
+  const handleVerticalButtons = () => {
+    var style = {};
+    if (offsetY > navbarFactor && !isOpen) {
+      style = {
+        transform: "translateX(-200px)",
+        opacity: "0",
+      };
+    }
+    return style;
+  };
+
+  const handleHamburgerClick = () => {
+    return isOpen && offsetY > navbarFactor
+      ? setIsOpen(false)
+      : setIsOpen(true);
+  };
+  const handleHamburger = () => {
+    // disabled styling
+    var style = {};
+    if (offsetY < navbarFactor) style = { backgroundColor: "transparent" };
+    return style;
+  };
+  const handleTopLine = () => {
+    var style = {};
+    if (offsetY < navbarFactor) {
+      style = { opacity: "0" };
+    } else if (isOpen) {
+      style = { transform: "translateY(4px) rotate(45deg)" };
+    }
+    return style;
+  };
+  const handleMidLine = () => {
+    var style = {};
+    if (isOpen || offsetY < navbarFactor) {
+      style = { opacity: "0" };
+    }
+    return style;
+  };
+  const handleBotLine = () => {
+    var style = {};
+    if (offsetY < navbarFactor) {
+      style = { opacity: "0" };
+    } else if (isOpen) {
+      style = { transform: "translateY(-4px) rotate(-45deg)" };
+    }
     return style;
   };
 
   return (
     <div className={styles.mainContainer} style={handleMainContainer()}>
       <div className={styles.upperContainer}>
-        <div className={styles.logoBig} style={handleNavbar()}>
+        <div className={styles.logoBig} style={handleLogoBig()}>
           AYRE <br />
           GREEN <br />
           FINANCE <br />
@@ -109,6 +191,15 @@ const Navbar: React.FC<{
           A <br />
           G <br />
           F <br />
+        </div>
+        <div
+          className={styles.hamburger}
+          onClick={() => handleHamburgerClick()}
+          style={handleHamburger()}
+        >
+          <div className={styles.topLine} style={handleTopLine()}></div>
+          <div className={styles.midLine} style={handleMidLine()}></div>
+          <div className={styles.botLine} style={handleBotLine()}></div>
         </div>
         <div className={styles.buttonContainerHorizontal}>
           <div className={styles.button}>CONTACT</div>

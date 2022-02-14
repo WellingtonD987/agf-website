@@ -18,6 +18,7 @@ const App: React.FC = () => {
   const handleScroll = () => {
     setOffsetY(window.pageYOffset);
   };
+  console.log(offsetY);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
