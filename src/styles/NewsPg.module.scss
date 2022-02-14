@@ -1,41 +1,18 @@
-.container {
-  padding: 10vh 0;
-  margin: 0 40px;
+.mainContainer {
+  width: calc(100vw - 50px);
+  //height: calc(100vh - 20px);
+  min-height: 100vh;
+  height: auto;
 
-  width: calc(100% - 80px);
+  margin-left: 30px;
+  padding: 10px;
+}
 
-  .titleContainer {
-    font-size: 4vw;
-    line-height: 99%;
-    font-weight: 900;
-    @media only screen and (max-width: 1028px) {
-      font-size: 40px;
-    }
-    @media only screen and (max-width: 425px) {
-      font-size: 30px;
-    }
-
-    margin: 10px;
-  }
-  .description {
-    font-size: 1.5vw;
-    @media only screen and (max-width: 1028px) {
-      font-size: 18px;
-    }
-
-    margin: 10px;
-  }
-  .newsContainer {
-    background-color: rgb(150, 26, 167);
-
-    height: 60vh;
-    width: 100%;
-  }
-  .newsButtons {
-    background-color: rgb(212, 42, 12);
-    height: 10vh;
-    width: 50%;
-
-    margin: 5vh 0;
-  }
+.titleContainer {
+  margin-bottom: 20px;
+}
+.title {
+  font-size: 60px;
+}
+.description {
 }

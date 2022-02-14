@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from "react";
 import { useIntersectionObserver } from "usehooks-ts";
 
-import styles from "../styles/ObjectivesPg.module.scss";
+import styles from "../styles/VisionPg.module.scss";
 import image from "../images/space.jpg";
 
-const ObjectivesPg: React.FC<{
+const VisionPg: React.FC<{
   setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
 }> = ({ setIsVisible }) => {
   // https://usehooks-ts.com/react-hook/use-intersection-observer
@@ -23,4 +23,4 @@ const ObjectivesPg: React.FC<{
   );
 };
 
-export default ObjectivesPg;
+export default VisionPg;

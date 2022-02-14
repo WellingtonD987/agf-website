@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from "react";
 import { useIntersectionObserver } from "usehooks-ts";
 import styles from "../styles/NewsPg.module.scss";
 
+import NewsStrip from "../components/NewsStrip";
+
 const NewsPg: React.FC<{
   setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
 }> = ({ setIsVisible }) => {
@@ -14,14 +16,27 @@ const NewsPg: React.FC<{
   }, [isVisible, setIsVisible]);
 
   return (
-    <div className={styles.container} ref={ref}>
-      <div className={styles.titleContainer}>Latest News</div>
-      <div className={styles.description}>
-        We are always exploring the latest innovations. Hear what our experts
-        have to say
+    <div className={styles.mainContainer} ref={ref}>
+      <div className={styles.titleContainer}>
+        <div className={styles.title}>Latest News</div>
+        <div className={styles.description}>Hear from our experts</div>
       </div>
-      <div className={styles.newsContainer}></div>
-      <div className={styles.newsButtons}></div>
+      <div>
+        <NewsStrip
+          title="Tech"
+          genre="tech"
+          description=""
+          link=""
+          isLeft={true}
+        />
+        <NewsStrip
+          title="Culture"
+          genre="culture"
+          description=""
+          link=""
+          isLeft={false}
+        />
+      </div>
     </div>
   );
 };

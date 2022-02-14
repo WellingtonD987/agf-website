@@ -60,7 +60,7 @@
 */
 
 :root {
-  --transition-cond: all 0.2s ease-in-out;
+  --transition-cond: all 0.5s ease-in-out;
 }
 
 .mainContainer {
@@ -125,6 +125,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    transition: var(--transition-cond);
     .topLine {
       background-color: rgb(255, 255, 255);
       width: 15px;
@@ -205,6 +207,13 @@
     //background-color: rgb(142, 212, 0);
     margin-left: 25px;
 
+    /*
+    opacity: 0;
+    animation: load-in 1s ease;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+    */
+
     transition: var(--transition-cond);
     transition: opacity 0.2s ease-in-out;
     .button {
@@ -222,3 +231,16 @@
     }
   }
 }
+
+/*
+@keyframes load-in {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+*/

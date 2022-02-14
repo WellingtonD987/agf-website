@@ -12,6 +12,7 @@ import StatsPg from "../pages/StatsPg";
 import PartnersPg from "../pages/PartnersPg";
 import NewsPg from "../pages/NewsPg";
 import FooterPg from "../pages/FooterPg";
+import VisionPg from "../pages/VisionPg";
 
 const App: React.FC = () => {
   const [offsetY, setOffsetY] = useState(0);
@@ -26,8 +27,9 @@ const App: React.FC = () => {
   }, []);
 
   const [isTitlePgVisible, setIsTitlePgVisible] = useState(false);
+  const [isVisionPgVisible, setIsVisionPgVisible] = useState(false);
   const [isObjectivesPgVisible, setIsObjectivesPgVisible] = useState(false);
-  const [isStatsPgVisible, setIsStatsPgVisible] = useState(false);
+  //const [isStatsPgVisible, setIsStatsPgVisible] = useState(false);
   const [isNewsPgVisible, setIsNewsPgVisible] = useState(false);
   const [isFooterPgVisible, setIsFooterPgVisible] = useState(false);
 
@@ -44,37 +46,31 @@ const App: React.FC = () => {
     window.scrollTo(0, 0);
   };
 
+  const handleBackground = () => {
+    var style = {};
+    if (isObjectivesPgVisible && !isTitlePgVisible)
+      style = { backgroundColor: "rgb(0, 140, 255)" };
+    return style;
+  };
+
   return (
-    <div>
+    <div className={styles.mainContainer} style={handleBackground()}>
       <Navbar
         offsetY={offsetY}
         isTitlePgVisible={isTitlePgVisible}
         isObjectivesPgVisible={isObjectivesPgVisible}
-        isStatsPgVisible={isStatsPgVisible}
+        isVisionPgVisible={isVisionPgVisible}
         isNewsPgVisible={isNewsPgVisible}
         isFooterPgVisible={isFooterPgVisible}
       />
-      <div>
+      <div className={styles.pagesContainer}>
         <TitlePg setIsVisible={setIsTitlePgVisible} />
+        <VisionPg setIsVisible={setIsVisionPgVisible} />
         <ObjectivesPg setIsVisible={setIsObjectivesPgVisible} />
-      </div>
-      {/*
-      <ContactButton
-        isVisible={showContactPg}
-        setIsVisible={setShowContactPg}
-      />
-      <div>
-        <TitlePg setIsVisible={setIsTitlePgVisible} />
-        <ObjectivesPg
-          offsetY={offsetY}
-          setIsVisible={setIsObjectivesPgVisible}
-        />
-        <StatsPg offsetY={offsetY} setIsVisible={setIsStatsPgVisible} />
-        <PartnersPg />
+        {/*<PartnersPg />*/}
         <NewsPg setIsVisible={setIsNewsPgVisible} />
-        <FooterPg offsetY={offsetY} setIsVisible={setIsFooterPgVisible} />
+        <FooterPg setIsVisible={setIsFooterPgVisible} />
       </div>
-      */}
     </div>
   );
 };

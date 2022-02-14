@@ -10,93 +10,45 @@ const Navbar: React.FC<{
   offsetY: number;
   isTitlePgVisible: boolean;
   isObjectivesPgVisible: boolean;
-  isStatsPgVisible: boolean;
+  isVisionPgVisible: boolean;
   isNewsPgVisible: boolean;
   isFooterPgVisible: boolean;
 }> = ({
   offsetY,
   isTitlePgVisible,
   isObjectivesPgVisible,
-  isStatsPgVisible,
+  isVisionPgVisible,
   isNewsPgVisible,
   isFooterPgVisible,
 }) => {
   const handleTitlePg = () => {
     var style = {};
-    if (isTitlePgVisible && !isObjectivesPgVisible) {
+    if (isTitlePgVisible) {
       style = { height: `50vh` };
     }
     return style;
   };
   const handleObjectivesPg = () => {
     var style = {};
-    if (isObjectivesPgVisible) {
-      style = { height: `50vh` };
-    }
-    return style;
-  };
-  const handleStatsPg = () => {
-    var style = {};
-    if (isStatsPgVisible && !isObjectivesPgVisible) {
+    if ((isObjectivesPgVisible || isVisionPgVisible) && !isTitlePgVisible) {
       style = { height: `50vh` };
     }
     return style;
   };
   const handleNewsPg = () => {
     var style = {};
-    if (isNewsPgVisible && !isStatsPgVisible && !isFooterPgVisible) {
+    if (isNewsPgVisible && !(isObjectivesPgVisible || isVisionPgVisible)) {
       style = { height: `50vh` };
     }
     return style;
   };
   const handleFooterPg = () => {
     var style = {};
-    if (isFooterPgVisible) {
+    if (isFooterPgVisible && !isNewsPgVisible) {
       style = { height: `50vh` };
     }
     return style;
   };
-
-  /*
-  const handleNavbar = () => {
-    var factor = (-1 * offsetY) / 100 + 1;
-    if (factor < 0)
-      return {
-        opacity: `calc(${offsetY - document.body.clientHeight} / ${
-          window.innerHeight
-        })`,
-      };
-
-    return { opacity: `${factor}` };
-  };
-  */
-
-  /*
-  const [navbarFactor, setNavbarFactor] = useState(0);
-  useEffect(() => {
-    window.innerHeight > 768 ? setNavbarFactor(500) : setNavbarFactor(50);
-  }, []);
-
-
-  const handleMainContainer = () => {
-    var style = {};
-    if (offsetY > navbarFactor)
-      style = {
-        borderRight: "1px solid rgba(0, 0, 0, 1)",
-        width: "20px",
-      };
-    return style;
-  };
-
-  const handleVerticalButtons = () => {
-    var style = {};
-    if (offsetY > navbarFactor)
-      style = {
-        display: "none",
-      };
-    return style;
-  };
-  */
 
   /* 
   there are 3 states to this navbar: 
@@ -131,12 +83,16 @@ const Navbar: React.FC<{
     }
     return style;
   };
+
+  //const [vertButtonLoad, setVertButtonLoad] = useState(false);
   const handleVerticalButtons = () => {
     var style = {};
     if (offsetY > navbarFactor && !isOpen) {
       style = {
         transform: "translateX(-200px)",
         opacity: "0",
+        animation: "",
+        animationFillMode: "",
       };
     }
     return style;
@@ -211,7 +167,6 @@ const Navbar: React.FC<{
         <div className={styles.progressBar}>
           <div style={handleTitlePg()}></div>
           <div style={handleObjectivesPg()}></div>
-          <div style={handleStatsPg()}></div>
           <div style={handleNewsPg()}></div>
           <div style={handleFooterPg()}></div>
         </div>

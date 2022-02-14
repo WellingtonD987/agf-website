@@ -3,7 +3,7 @@
 
   --card-margin: 10px;
   --card-width: 300px;
-  --card-height: 200px;
+  --card-height: 120px;
 
   --container-height: calc(
     var(--card-margin) + var(--card-margin) + var(--card-height)
@@ -14,10 +14,10 @@
 }
 
 .mainContainer {
-  padding-top: 5vh;
+  margin: 40px 0;
   .title {
     font-size: 4vh;
-    font-weight: 900;
+    font-weight: 500;
     font-style: italic;
     line-height: 99%;
 

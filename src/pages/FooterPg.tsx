@@ -5,8 +5,7 @@ import { ReactComponent as Arrow } from "../svg/upper-right-arrow-svgrepo-com.sv
 
 const FooterPg: React.FC<{
   setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
-  offsetY: number;
-}> = ({ setIsVisible, offsetY }) => {
+}> = ({ setIsVisible }) => {
   // https://usehooks-ts.com/react-hook/use-intersection-observer
   const ref = useRef<HTMLDivElement | null>(null);
   const entry = useIntersectionObserver(ref, {});
@@ -15,37 +14,20 @@ const FooterPg: React.FC<{
     setIsVisible(isVisible);
   }, [isVisible, setIsVisible]);
 
-  // hacky way...
-  const [offsetRoot, setOffsetRoot] = useState(0);
-  const [firstEntry, setFirstEntry] = useState(true);
-  if (isVisible && firstEntry) {
-    console.log("start!");
-    setOffsetRoot(offsetY);
-    setFirstEntry(false);
-  }
-
-  //let height = 200;
-  let deltaOffset = offsetY - offsetRoot;
-  const handleBackground = () => {
-    return { transform: `translateX(calc(-100vw + (${deltaOffset} * 0.5))` };
-  };
-
   return (
-    <div>
-      <div
-        className={styles.background}
-        style={handleBackground()}
-        ref={ref}
-      ></div>
-      <div className={styles.contentContainer}>
-        <div className={styles.action}>Contact us to Find Out More</div>
-        <div className={styles.title}>
-          SUSTAINABLE SOLUTIONS
-          <div className={styles.copyright}>
-            © 2021 AYRE GREEN FINANCE - All Rights Reserved | Created by
-            Wellington Q. Dulay
-          </div>
+    <div className={styles.mainContainer} ref={ref}>
+      <div className={styles.upperContainer}>
+        <div className={styles.title}>ECO FINTECH</div>
+      </div>
+      <div className={styles.lowerContainer}>
+        <div className={styles.title}>AYRE GREEN FINANCE</div>
+        <div className={styles.copyright}>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui corrupti
+          et voluptas voluptatum error sed nihil nostrum unde neque
+          necessitatibus vel facere, molestias, ut, nam minus illo libero
+          suscipit tenetur.
         </div>
+        {/* things to add: menu, socials, location, legal, contact details, sign up */}
       </div>
     </div>
   );

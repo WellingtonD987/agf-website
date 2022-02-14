@@ -9,9 +9,12 @@ interface cardProps extends card {
 const PartnerCard: React.FC<cardProps> = ({ color, groupA }) => {
   return (
     <div>
+      {/*
       <div className={styles.card} style={{ backgroundColor: color }}>
         {color}
       </div>
+      */}
+      <div className={styles.card} style={{ backgroundColor: "white" }}></div>
     </div>
   );
 };
