@@ -16,16 +16,16 @@ const TitlePg: React.FC<{
 
   return (
     <div className={styles.container} ref={ref}>
-      <div className={styles.title}>
-        The Global Leader for
-        <span className={styles.titleHighlight}> Green</span> FinTech Solutions,{" "}
-        <br />
-      </div>
-      <div className={styles.copyright}>
-        © 2021 AYRE GREEN FINANCE - All Rights Reserved
-      </div>
       {/*https://youtu.be/PYFltdGJ-Rc */}
       <video className={styles.hero} autoPlay loop muted>
+        <div className={styles.title}>
+          The Global Leader for
+          <span className={styles.titleHighlight}> Green</span> FinTech
+          Solutions, <br />
+        </div>
+        <div className={styles.copyright}>
+          © 2021 AYRE GREEN FINANCE - All Rights Reserved
+        </div>
         <source src={headerVideo} type="video/mp4" />
       </video>
     </div>

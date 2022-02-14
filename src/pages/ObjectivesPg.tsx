@@ -39,7 +39,8 @@ const ObjectivesPg: React.FC<{
           ecological awareness.
         </div>
       </div>
-      <div className={styles.imageContainer}>
+      {/* our story button */}
+      <div className={styles.imageContainer} style={{ display: "none" }}>
         <img
           alt="space"
           src={image}
