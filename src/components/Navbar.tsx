@@ -181,9 +181,24 @@ const Navbar: React.FC<{
           <div className={styles.botLine} style={handleBotLine()}></div>
         </div>
         <div className={styles.buttonContainerHorizontal}>
-          <div className={styles.button}>CONTACT</div>
-          <div className={styles.button}>NEWS</div>
-          <div className={styles.button}>STORY</div>
+          <div
+            className={styles.button}
+            style={{ backgroundColor: backgroundColor }}
+          >
+            CONTACT
+          </div>
+          <div
+            className={styles.button}
+            style={{ backgroundColor: backgroundColor }}
+          >
+            NEWS
+          </div>
+          <div
+            className={styles.button}
+            style={{ backgroundColor: backgroundColor }}
+          >
+            STORY
+          </div>
         </div>
       </div>
       <div className={styles.lowerContainer}>

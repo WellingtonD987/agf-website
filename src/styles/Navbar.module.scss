@@ -164,9 +164,9 @@
     flex-direction: row;
     justify-content: flex-end;
     .button {
-      background-color: rgb(20, 112, 173);
+      //background-color: rgb(165, 196, 243);
       border-radius: 50%;
-      border: 5px black;
+      border: 1px solid black;
 
       width: 60px;
       height: 60px;
@@ -218,9 +218,9 @@
     //transition: var(--transition-cond);
     transition: all 0.5s ease-in-out;
     .button {
-      background-color: rgb(14, 0, 212);
+      background-color: rgb(30, 102, 209);
       border-radius: 50%;
-      border: 5px black;
+      border: 1px solid black;
 
       width: 100px;
       height: 100px;
