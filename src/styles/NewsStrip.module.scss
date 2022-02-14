@@ -1,7 +1,74 @@
-.mainContainer {
-  background-color: aqua;
-  height: 300px;
+.mainContainerA {
+  //background-color: aqua;
+  height: 400px;
   width: 100%;
 
   margin-bottom: 10px;
+
+  display: flex;
+  flex-direction: row;
+  @media only screen and (max-width: 618px) {
+    flex-direction: column;
+  }
+}
+.mainContainerB {
+  //background-color: aqua;
+  height: 400px;
+  width: 100%;
+
+  margin-bottom: 10px;
+
+  display: flex;
+  flex-direction: row-reverse;
+  @media only screen and (max-width: 618px) {
+    flex-direction: column;
+  }
+}
+.articles {
+  //background-color: azure;
+  height: 100%;
+  width: auto;
+
+  display: flex;
+  flex-direction: row;
+}
+.titleContainer {
+  //background-color: rgb(104, 104, 230);
+  height: 100%;
+  width: auto;
+
+  padding: 0 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media only screen and (max-width: 618px) {
+    height: auto;
+    padding-bottom: 10px;
+  }
+  .title {
+    font-size: 30px;
+    font-weight: 500;
+    //letter-spacing: -3px;
+    margin-bottom: 20px;
+
+    @media only screen and (max-width: 618px) {
+      margin-bottom: 10px;
+    }
+  }
+  .link {
+    //background-color: rgb(104, 215, 230);
+    border-radius: 50%;
+    border: 1px solid black;
+
+    height: 100px;
+    width: 100px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }

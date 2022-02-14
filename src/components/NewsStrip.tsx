@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "../styles/NewsStrip.module.scss";
+import NewsCard from "./NewsCard";
 
 const NewsStrip: React.FC<{
   title: string;
@@ -8,19 +9,36 @@ const NewsStrip: React.FC<{
   link: string;
   isLeft: boolean;
 }> = ({ title, genre, description, link, isLeft }) => {
-  const handleFlip = () => {
-    var style = {};
-    if (!isLeft) style = { flexDirection: "row-reverse" };
-    return style;
-  };
+  /*
+  PROCESS:
+   - Fetch data from API with key: genre,
+   - Sort data in chronological order, 
+   - Take ONLY the first two data points,
+   - spread data across NewsCard's A & B
+  */
 
   return (
-    <div className={styles.mainContainer} style={handleFlip()}>
-      <div className={styles.articles}></div>
+    <div className={isLeft ? styles.mainContainerA : styles.mainContainerB}>
+      <div className={styles.articles}>
+        <NewsCard
+          title="Test"
+          image=""
+          description="Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum ..."
+          link=""
+          isCardA={true}
+        />
+        <NewsCard
+          title="Test"
+          image=""
+          description="Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum ..."
+          link=""
+          isCardA={false}
+        />
+      </div>
       <div className={styles.titleContainer}>
-        <div className={styles.title}></div>
+        <div className={styles.title}>{title}</div>
         <div className={styles.description}></div>
-        <div className={styles.link}></div>
+        <div className={styles.link}>SEE MORE</div>
       </div>
     </div>
   );

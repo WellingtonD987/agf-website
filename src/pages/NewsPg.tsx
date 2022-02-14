@@ -24,14 +24,14 @@ const NewsPg: React.FC<{
       <div>
         <NewsStrip
           title="Tech"
-          genre="tech"
+          genre="Tech"
           description=""
           link=""
           isLeft={true}
         />
         <NewsStrip
           title="Culture"
-          genre="culture"
+          genre="Culture"
           description=""
           link=""
           isLeft={false}

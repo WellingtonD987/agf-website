@@ -1,0 +1,54 @@
+.mainContainerA {
+  background-color: rgb(255, 249, 241);
+
+  height: calc(100% - 10px);
+  width: 400px;
+
+  margin-right: 10px;
+  padding: 5px;
+  @media only screen and (max-width: 1024px) {
+    margin-right: 0;
+  }
+  @media only screen and (max-width: 618px) {
+    width: 100%;
+  }
+}
+.mainContainerB {
+  background-color: rgb(255, 249, 241);
+
+  height: calc(100% - 10px);
+  width: 400px;
+
+  margin-right: 10px;
+  padding: 5px;
+  @media only screen and (max-width: 1024px) {
+    display: none;
+  }
+}
+
+.image {
+  background-color: rgb(221, 212, 200);
+
+  height: 70%;
+  width: 400px;
+  @media only screen and (max-width: 618px) {
+    width: 100%;
+    height: 100%;
+  }
+}
+.descriptionBox {
+  //background-color: rgb(74, 82, 61);
+
+  height: auto;
+  width: 400px;
+
+  margin-top: 5px;
+  .title {
+    font-size: 23px;
+    margin-bottom: 5px;
+  }
+
+  @media only screen and (max-width: 618px) {
+    display: none;
+  }
+}
