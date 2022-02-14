@@ -213,9 +213,24 @@ const Navbar: React.FC<{
           className={styles.buttonContainerVertical}
           style={handleVerticalButtons()}
         >
-          <div className={styles.button}>CONTACT</div>
-          <div className={styles.button}>NEWS</div>
-          <div className={styles.button}>STORY</div>
+          <div
+            className={styles.button}
+            style={{ backgroundColor: backgroundColor }}
+          >
+            CONTACT
+          </div>
+          <div
+            className={styles.button}
+            style={{ backgroundColor: backgroundColor }}
+          >
+            NEWS
+          </div>
+          <div
+            className={styles.button}
+            style={{ backgroundColor: backgroundColor }}
+          >
+            STORY
+          </div>
         </div>
       </div>
     </div>
