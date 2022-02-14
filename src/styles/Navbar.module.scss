@@ -1,3 +1,4 @@
+/*
 .mainContainer {
   z-index: 998;
 
@@ -5,7 +6,6 @@
   height: 100vh;
 
   position: fixed;
-  margin-top: 50px;
 
   display: flex;
   flex-direction: column;
@@ -57,14 +57,126 @@
     transition: all 0.5s ease-in-out;
   }
 }
-/*
-.progressLine {
-  background-color: rgb(0, 0, 0);
-  border-radius: 500px;
-
-  height: 50vh;
-  width: 5px;
-
-  margin: 10px 20px 10px 15px;
-}
 */
+
+:root {
+  --transition-cond: all 0.2s ease-in-out;
+}
+
+.mainContainer {
+  z-index: 1000;
+
+  //background-color: aqua;
+  width: 150px;
+  height: 100vh;
+  padding-left: 10px;
+  padding-top: 10px;
+
+  position: fixed;
+  @media only screen and (max-width: 768px) {
+    //width: 20px;
+    width: 110px;
+    padding-top: 0;
+  }
+
+  border-right: 1px solid rgba(0, 0, 0, 0);
+
+  // for width and border transitions
+  transition: var(--transition-cond);
+}
+.upperContainer {
+  width: 100%;
+  height: auto;
+  @media only screen and (max-width: 768px) {
+    //background-color: rgb(0, 255, 0);
+    width: 100vw;
+    font-size: 24px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  margin-left: -4px;
+
+  color: rgb(0, 0, 0);
+  line-height: 90%;
+  font-weight: 700;
+  font-size: 30px;
+  .logoBig {
+    height: 90px;
+    // for opacity transition
+    transition: var(--transition-cond);
+  }
+  .logoSmall {
+    margin-top: -90px;
+  }
+  .buttonContainerHorizontal {
+    display: none;
+    @media only screen and (max-width: 768px) {
+      display: flex;
+    }
+    font-size: 11px;
+    font-weight: 500;
+    //background-color: rgb(142, 212, 0);
+    margin-left: 15px;
+    margin-top: -65px;
+
+    flex-direction: row;
+    justify-content: flex-end;
+    .button {
+      background-color: rgb(14, 0, 212);
+      border-radius: 50%;
+      border: 5px black;
+
+      width: 60px;
+      height: 60px;
+
+      margin-right: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+.lowerContainer {
+  margin-top: 50px;
+
+  display: flex;
+  flex-direction: row;
+  .progressBar {
+    width: 10px;
+    height: auto;
+    //https://stackoverflow.com/a/18795153
+    div {
+      background-color: rgb(0, 0, 0);
+      border-radius: 500px;
+
+      height: 3.5px;
+      width: 3.5px;
+      margin-bottom: 10px;
+
+      transition: all 0.5s ease-in-out;
+    }
+  }
+  .buttonContainerVertical {
+    display: block;
+    @media only screen and (max-width: 768px) {
+      display: none;
+    }
+
+    //background-color: rgb(142, 212, 0);
+    margin-left: 15px;
+    .button {
+      background-color: rgb(14, 0, 212);
+      border-radius: 50%;
+      border: 5px black;
+
+      width: 100px;
+      height: 100px;
+
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

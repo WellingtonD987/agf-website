@@ -53,6 +53,11 @@ const App: React.FC = () => {
         isNewsPgVisible={isNewsPgVisible}
         isFooterPgVisible={isFooterPgVisible}
       />
+      <div>
+        <TitlePg setIsVisible={setIsTitlePgVisible} />
+        <ObjectivesPg setIsVisible={setIsObjectivesPgVisible} />
+      </div>
+      {/*
       <ContactButton
         isVisible={showContactPg}
         setIsVisible={setShowContactPg}
@@ -68,6 +73,7 @@ const App: React.FC = () => {
         <NewsPg setIsVisible={setIsNewsPgVisible} />
         <FooterPg offsetY={offsetY} setIsVisible={setIsFooterPgVisible} />
       </div>
+      */}
     </div>
   );
 };

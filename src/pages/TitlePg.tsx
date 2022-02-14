@@ -15,9 +15,12 @@ const TitlePg: React.FC<{
   }, [isVisible, setIsVisible]);
 
   return (
-    <div className={styles.container} ref={ref}>
+    <div className={styles.mainContainer} ref={ref}>
       {/*https://youtu.be/PYFltdGJ-Rc */}
       <video className={styles.hero} autoPlay loop muted>
+        <source src={headerVideo} type="video/mp4" />
+      </video>
+      <div className={styles.titleContainer}>
         <div className={styles.title}>
           The Global Leader for
           <span className={styles.titleHighlight}> Green</span> FinTech
@@ -26,8 +29,7 @@ const TitlePg: React.FC<{
         <div className={styles.copyright}>
           © 2021 AYRE GREEN FINANCE - All Rights Reserved
         </div>
-        <source src={headerVideo} type="video/mp4" />
-      </video>
+      </div>
     </div>
   );
 };

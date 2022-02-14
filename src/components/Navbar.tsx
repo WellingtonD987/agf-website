@@ -56,6 +56,7 @@ const Navbar: React.FC<{
     return style;
   };
 
+  /*
   const handleNavbar = () => {
     var factor = (-1 * offsetY) / 100 + 1;
     if (factor < 0)
@@ -67,25 +68,70 @@ const Navbar: React.FC<{
 
     return { opacity: `${factor}` };
   };
+  */
+  const handleNavbar = () => {
+    var style = {};
+    if (offsetY > 50)
+      style = {
+        color: "rgba(0,0,0,0)",
+      };
+    return style;
+  };
+
+  const handleMainContainer = () => {
+    var style = {};
+    if (offsetY > 50)
+      style = {
+        borderRight: "1px solid rgba(0, 0, 0, 1)",
+        width: "20px",
+      };
+    return style;
+  };
+
+  const handleVerticalButtons = () => {
+    var style = {};
+    if (offsetY > 50)
+      style = {
+        display: "none",
+      };
+    return style;
+  };
 
   return (
-    <div className={styles.mainContainer}>
-      <div className={styles.logoBig} style={handleNavbar()}>
-        AYRE <br />
-        GREEN <br />
-        FINANCE <br />
+    <div className={styles.mainContainer} style={handleMainContainer()}>
+      <div className={styles.upperContainer}>
+        <div className={styles.logoBig} style={handleNavbar()}>
+          AYRE <br />
+          GREEN <br />
+          FINANCE <br />
+        </div>
+        <div className={styles.logoSmall}>
+          A <br />
+          G <br />
+          F <br />
+        </div>
+        <div className={styles.buttonContainerHorizontal}>
+          <div className={styles.button}>CONTACT</div>
+          <div className={styles.button}>NEWS</div>
+          <div className={styles.button}>STORY</div>
+        </div>
       </div>
-      <div className={styles.logoSmall}>
-        A <br />
-        G <br />
-        F <br />
-      </div>
-      <div className={styles.progressBar}>
-        <div style={handleTitlePg()}></div>
-        <div style={handleObjectivesPg()}></div>
-        <div style={handleStatsPg()}></div>
-        <div style={handleNewsPg()}></div>
-        <div style={handleFooterPg()}></div>
+      <div className={styles.lowerContainer}>
+        <div className={styles.progressBar}>
+          <div style={handleTitlePg()}></div>
+          <div style={handleObjectivesPg()}></div>
+          <div style={handleStatsPg()}></div>
+          <div style={handleNewsPg()}></div>
+          <div style={handleFooterPg()}></div>
+        </div>
+        <div
+          className={styles.buttonContainerVertical}
+          style={handleVerticalButtons()}
+        >
+          <div className={styles.button}>CONTACT</div>
+          <div className={styles.button}>NEWS</div>
+          <div className={styles.button}>STORY</div>
+        </div>
       </div>
     </div>
   );

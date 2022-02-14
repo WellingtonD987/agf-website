@@ -6,8 +6,7 @@ import image from "../images/space.jpg";
 
 const ObjectivesPg: React.FC<{
   setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
-  offsetY: number;
-}> = ({ offsetY, setIsVisible }) => {
+}> = ({ setIsVisible }) => {
   // https://usehooks-ts.com/react-hook/use-intersection-observer
   const ref = useRef<HTMLDivElement | null>(null);
   const entry = useIntersectionObserver(ref, {});
@@ -15,9 +14,6 @@ const ObjectivesPg: React.FC<{
   useEffect(() => {
     setIsVisible(isVisible);
   }, [isVisible, setIsVisible]);
-
-  // im calling defeat and letting this number exist...
-  const offsetRoot = 1500;
 
   return (
     <div className={styles.mainContainer}>
@@ -40,16 +36,6 @@ const ObjectivesPg: React.FC<{
         </div>
       </div>
       {/* our story button */}
-      <div className={styles.imageContainer} style={{ display: "none" }}>
-        <img
-          alt="space"
-          src={image}
-          className={styles.image}
-          style={{
-            transform: `translateY(${(offsetY - offsetRoot) * -0.4}px)`,
-          }}
-        ></img>
-      </div>
     </div>
   );
 };
