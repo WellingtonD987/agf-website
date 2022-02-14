@@ -19,7 +19,7 @@ const App: React.FC = () => {
   const handleScroll = () => {
     setOffsetY(window.pageYOffset);
   };
-  console.log(offsetY);
+  //console.log(offsetY);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -42,14 +42,21 @@ const App: React.FC = () => {
     }
   }, [showContactPg]);
 
+  // scroll to top of app on reload
   window.onbeforeunload = function () {
     window.scrollTo(0, 0);
   };
 
+  var backgroundColor = "";
   const handleBackground = () => {
     var style = {};
-    if (isObjectivesPgVisible && !isTitlePgVisible)
-      style = { backgroundColor: "rgb(0, 140, 255)" };
+    if (isObjectivesPgVisible && !isTitlePgVisible) {
+      backgroundColor = "rgb(0, 140, 255)";
+      style = { backgroundColor: backgroundColor };
+    } else {
+      backgroundColor = "rgb(255, 145, 0)";
+      style = { backgroundColor: backgroundColor };
+    }
     return style;
   };
 
@@ -62,6 +69,7 @@ const App: React.FC = () => {
         isVisionPgVisible={isVisionPgVisible}
         isNewsPgVisible={isNewsPgVisible}
         isFooterPgVisible={isFooterPgVisible}
+        backgroundColor={backgroundColor}
       />
       <div className={styles.pagesContainer}>
         <TitlePg setIsVisible={setIsTitlePgVisible} />

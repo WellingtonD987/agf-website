@@ -13,6 +13,7 @@ const Navbar: React.FC<{
   isVisionPgVisible: boolean;
   isNewsPgVisible: boolean;
   isFooterPgVisible: boolean;
+  backgroundColor: string;
 }> = ({
   offsetY,
   isTitlePgVisible,
@@ -20,32 +21,40 @@ const Navbar: React.FC<{
   isVisionPgVisible,
   isNewsPgVisible,
   isFooterPgVisible,
+  backgroundColor,
 }) => {
   const handleTitlePg = () => {
     var style = {};
-    if (isTitlePgVisible) {
-      style = { height: `50vh` };
+    if (isTitlePgVisible && !isVisionPgVisible) {
+      style = { height: `50vh`, borderRadius: "500px" };
+    }
+    return style;
+  };
+  const handleVisionPg = () => {
+    var style = {};
+    if (isVisionPgVisible) {
+      style = { height: `50vh`, borderRadius: "500px" };
     }
     return style;
   };
   const handleObjectivesPg = () => {
     var style = {};
-    if ((isObjectivesPgVisible || isVisionPgVisible) && !isTitlePgVisible) {
-      style = { height: `50vh` };
+    if (isObjectivesPgVisible && !isVisionPgVisible) {
+      style = { height: `50vh`, borderRadius: "500px" };
     }
     return style;
   };
   const handleNewsPg = () => {
     var style = {};
-    if (isNewsPgVisible && !(isObjectivesPgVisible || isVisionPgVisible)) {
-      style = { height: `50vh` };
+    if (isNewsPgVisible && !isObjectivesPgVisible) {
+      style = { height: `50vh`, borderRadius: "500px" };
     }
     return style;
   };
   const handleFooterPg = () => {
     var style = {};
     if (isFooterPgVisible && !isNewsPgVisible) {
-      style = { height: `50vh` };
+      style = { height: `50vh`, borderRadius: "500px" };
     }
     return style;
   };
@@ -60,9 +69,21 @@ const Navbar: React.FC<{
   const [isOpen, setIsOpen] = useState(false);
   const navbarFactor = 50;
 
+  // TODO: find out if you can extend {}
   const handleMainContainer = () => {
     var style = {};
-    if (offsetY > navbarFactor && isOpen) {
+    if (offsetY > navbarFactor && isOpen && window.innerWidth > 768) {
+      style = {
+        borderRight: "1px solid rgba(0, 0, 0, 1)",
+        backgroundColor: backgroundColor,
+      };
+    } else if (offsetY > navbarFactor && window.innerWidth > 768) {
+      style = {
+        borderRight: "1px solid rgba(0, 0, 0, 1)",
+        backgroundColor: backgroundColor,
+        width: "20px",
+      };
+    } else if (offsetY > navbarFactor && isOpen) {
       style = {
         borderRight: "1px solid rgba(0, 0, 0, 1)",
       };
@@ -91,8 +112,10 @@ const Navbar: React.FC<{
       style = {
         transform: "translateX(-200px)",
         opacity: "0",
+        /*
         animation: "",
         animationFillMode: "",
+        */
       };
     }
     return style;
@@ -166,6 +189,7 @@ const Navbar: React.FC<{
       <div className={styles.lowerContainer}>
         <div className={styles.progressBar}>
           <div style={handleTitlePg()}></div>
+          <div style={handleVisionPg()}></div>
           <div style={handleObjectivesPg()}></div>
           <div style={handleNewsPg()}></div>
           <div style={handleFooterPg()}></div>

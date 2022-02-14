@@ -1,29 +1,124 @@
 .mainContainer {
-  background-color: rgb(48, 48, 48);
+  //background-color: rgb(48, 48, 48);
   width: calc(100vw - 50px);
   height: calc(100vh - 20px);
+  @media only screen and (max-width: 665px) {
+    height: auto;
+  }
+  border-top: 1px solid black;
 
   margin-left: 30px;
   padding: 10px;
 }
 
 .upperContainer {
-  height: 70%;
   width: 100%;
+  height: 70%;
+  @media only screen and (max-width: 850px) {
+    height: 50%;
+  }
+  @media only screen and (max-width: 665px) {
+    display: none;
+  }
 
   display: flex;
   justify-content: center;
   align-items: center;
   .title {
     font-size: 200px;
-    font-weight: 200;
+    font-weight: 100;
     line-height: 80%;
+    @media only screen and (max-width: 1274px) {
+      font-size: 100px;
+    }
+    @media only screen and (max-width: 620px) {
+      margin-bottom: 60px;
+    }
   }
 }
 .lowerContainer {
-  height: 30%;
   width: 100%;
+  height: calc(30% - 20px);
+  @media only screen and (max-width: 850px) {
+    height: calc(50% - 20px);
+  }
+  @media only screen and (max-width: 620px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  border-top: 1px solid black;
+  padding-top: 20px;
+  @media only screen and (max-width: 665px) {
+    border-top: none;
+  }
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
   .title {
-    font-weight: 700;
+    font-weight: 500;
+    font-size: 60px;
+    line-height: 90%;
+    @media only screen and (max-width: 850px) {
+      font-size: 40px;
+    }
+  }
+  .socials {
+    margin-top: 15px;
+    font-size: 20px;
+    line-height: 150%;
+
+    @media only screen and (max-width: 620px) {
+      margin-bottom: 10px;
+    }
+    span {
+      //background-color: aquamarine;
+      border-radius: 500px;
+      border: 1px solid black;
+      padding: 1px 10px;
+    }
+  }
+  .menu {
+    border-left: 1px solid black;
+    padding-left: 20px;
+
+    @media only screen and (max-width: 620px) {
+      border-left: none;
+      padding-left: 0;
+      margin-bottom: 10px;
+      border-top: 1px solid black;
+    }
+    .menuTitle {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+  }
+  .contacts {
+    padding-left: 20px;
+    @media only screen and (max-width: 620px) {
+      border-left: 0px solid black;
+      padding-left: 0;
+      margin-bottom: 10px;
+      border-top: 1px solid black;
+    }
+    .contactsTitle {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+  }
+  .location {
+    padding-left: 20px;
+    @media only screen and (max-width: 620px) {
+      border-left: 0px solid black;
+      padding-left: 0;
+      margin-bottom: 10px;
+      border-top: 1px solid black;
+    }
+    .locationTitle {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
   }
 }

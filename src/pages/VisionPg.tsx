@@ -17,7 +17,23 @@ const VisionPg: React.FC<{
 
   return (
     <div className={styles.mainContainer} ref={ref}>
-      <div className={styles.leftContainer}></div>
+      <div className={styles.leftContainer}>
+        <div className={styles.title}>Our Vision</div>
+        <div className={styles.text}>
+          Established in 2015, Ayre Green Finace was developed to create
+          solutions that leveraged the latest technology to create finanical
+          solutions that are ecologocially sensitive.
+        </div>
+        <div className={styles.textPersist}>
+          Our vision is to capture bussiness' finanical goals and optimise
+          existing systems with the latest research and science on Eco-FinTech.
+        </div>
+        <div className={styles.textBold}>
+          We believe that Financial Systems can be both effective and
+          ecoFriendly.
+        </div>
+        <div className={styles.button}>OUR STORY</div>
+      </div>
       <div className={styles.rightContainer}></div>
     </div>
   );
