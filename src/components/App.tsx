@@ -50,10 +50,16 @@ const App: React.FC = () => {
   var backgroundColor = "";
   const handleBackground = () => {
     var style = {};
-    if ((isVisionPgVisible || isNewsPgVisible) && !isFooterPgVisible) {
+    if (
+      (isVisionPgVisible || isObjectivesPgVisible || isNewsPgVisible) &&
+      !isFooterPgVisible
+    ) {
       backgroundColor = "rgb(0, 174, 255)";
       style = { backgroundColor: backgroundColor };
-    } else {
+    } /*else if (isNewsPgVisible && !isFooterPgVisible) {
+      backgroundColor = "rgb(179, 255, 37)";
+      style = { backgroundColor: backgroundColor };
+    }*/ else {
       backgroundColor = "rgb(255, 168, 37)";
       style = { backgroundColor: backgroundColor };
     }
