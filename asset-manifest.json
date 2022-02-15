@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/agf-website/static/css/main.7a6299da.css",
+    "main.js": "/agf-website/static/js/main.2680e7cb.js",
+    "static/js/787.5aa199f8.chunk.js": "/agf-website/static/js/787.5aa199f8.chunk.js",
+    "static/media/clouds.mp4": "/agf-website/static/media/clouds.9966bd8299fc2b4f6ef2.mp4",
+    "static/media/office.jpg": "/agf-website/static/media/office.d1a2f8f8b17cf3ee9292.jpg",
+    "static/media/coolCEO.jpg": "/agf-website/static/media/coolCEO.4ce86e535c605920962d.jpg",
+    "index.html": "/agf-website/index.html",
+    "main.7a6299da.css.map": "/agf-website/static/css/main.7a6299da.css.map",
+    "main.2680e7cb.js.map": "/agf-website/static/js/main.2680e7cb.js.map",
+    "787.5aa199f8.chunk.js.map": "/agf-website/static/js/787.5aa199f8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7a6299da.css",
+    "static/js/main.2680e7cb.js"
+  ]
+}
