@@ -83,7 +83,10 @@ const App: React.FC = () => {
         <ObjectivesPg setIsVisible={setIsObjectivesPgVisible} />
         {/*<PartnersPg />*/}
         <NewsPg setIsVisible={setIsNewsPgVisible} />
-        <FooterPg setIsVisible={setIsFooterPgVisible} />
+        <FooterPg
+          setIsVisible={setIsFooterPgVisible}
+          backgroundColor={backgroundColor}
+        />
       </div>
     </div>
   );

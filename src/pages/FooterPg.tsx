@@ -5,7 +5,8 @@ import { ReactComponent as Arrow } from "../svg/upper-right-arrow-svgrepo-com.sv
 
 const FooterPg: React.FC<{
   setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
-}> = ({ setIsVisible }) => {
+  backgroundColor: string;
+}> = ({ setIsVisible, backgroundColor }) => {
   // https://usehooks-ts.com/react-hook/use-intersection-observer
   const ref = useRef<HTMLDivElement | null>(null);
   const entry = useIntersectionObserver(ref, {});

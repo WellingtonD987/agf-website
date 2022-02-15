@@ -35,6 +35,9 @@
     font-size: 6vw;
     line-height: 90%;
     font-weight: 600;
+    @media only screen and (max-height: 472px) {
+      font-size: 3vw;
+    }
   }
   .copyright {
     color: rgb(255, 255, 255);
