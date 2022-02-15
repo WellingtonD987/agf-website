@@ -110,7 +110,7 @@ const Navbar: React.FC<{
     var style = {};
     if (offsetY > navbarFactor && !isOpen) {
       style = {
-        transform: "translateX(-200px)",
+        transform: "translateX(-140px)",
         opacity: "0",
         /*
         animation: "",

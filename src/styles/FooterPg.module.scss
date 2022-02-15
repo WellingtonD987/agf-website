@@ -77,6 +77,11 @@
       border: 1px solid black;
       padding: 1px 10px;
       cursor: pointer;
+
+      transition: background-color 0.1s ease-in-out;
+    }
+    span:hover {
+      background-color: rgb(255, 255, 255);
     }
   }
   .menu {
@@ -96,6 +101,10 @@
     .menuItem {
       text-decoration: underline;
       cursor: pointer;
+      transition: color 0.1s ease-in-out;
+    }
+    .menuItem:hover {
+      color: rgb(255, 255, 255);
     }
   }
   .contacts {

@@ -114,12 +114,19 @@
       width: 60px;
       height: 60px;
 
+      animation: load-in 1s ease;
+      animation-fill-mode: backwards;
+      animation-delay: 0.5s;
+
       margin-right: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
 
       transition: all 0.5s ease-in-out;
+    }
+    .button:hover {
+      background-color: rgb(255, 255, 255) !important;
     }
   }
 }
@@ -153,14 +160,11 @@
     //background-color: rgb(142, 212, 0);
     margin-left: 25px;
 
-    /*
-    opacity: 0;
     animation: load-in 1s ease;
-    animation-fill-mode: forwards;
+    animation-fill-mode: backwards;
     animation-delay: 0.5s;
-    */
 
-    //transition: var(--transition-cond);
+    transition: transform 0.5s ease-in-out, opacity 0.2s ease-in-out;
     .button {
       background-color: rgb(30, 102, 209);
       border-radius: 50%;
@@ -175,12 +179,14 @@
       align-items: center;
       justify-content: center;
 
-      transition: all 0.5s ease-in-out;
+      transition: background-color 0.1s ease-in-out;
+    }
+    .button:hover {
+      background-color: rgb(255, 255, 255) !important;
     }
   }
 }
 
-/*
 @keyframes load-in {
   from {
     transform: translateY(-20px);
@@ -191,4 +197,3 @@
     opacity: 1;
   }
 }
-*/
