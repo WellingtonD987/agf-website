@@ -17,7 +17,13 @@ const TitlePg: React.FC<{
   return (
     <div className={styles.mainContainer} ref={ref}>
       {/*https://youtu.be/PYFltdGJ-Rc */}
-      <video className={styles.hero} autoPlay loop muted>
+      <video
+        className={styles.hero}
+        autoPlay
+        loop
+        muted
+        style={{ backgroundColor: "black" }}
+      >
         <source src={headerVideo} type="video/mp4" />
       </video>
       <div className={styles.titleContainer}>
