@@ -46,7 +46,9 @@
 
   @media only screen and (max-width: 618px) {
     height: auto;
-    padding-bottom: 10px;
+    flex-direction: row;
+    padding-bottom: 30px;
+    padding-top: 10px;
   }
   .title {
     font-size: 30px;
@@ -55,7 +57,8 @@
     margin-bottom: 20px;
 
     @media only screen and (max-width: 618px) {
-      margin-bottom: 10px;
+      margin-right: 20px;
+      margin-bottom: 0;
     }
   }
   .link {
@@ -71,6 +74,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @media only screen and (max-width: 618px) {
+      height: 70px;
+      width: 70px;
+      font-size: 12px;
+    }
 
     transition: background-color 0.1s ease-in-out;
   }

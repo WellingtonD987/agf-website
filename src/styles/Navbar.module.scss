@@ -43,6 +43,11 @@
   font-size: 30px;
   .logoBig {
     height: 90px;
+
+    animation: load-in-title 2s ease;
+    animation-fill-mode: backwards;
+    animation-delay: 0s;
+
     // for opacity transition
     transition: var(--transition-cond);
   }
@@ -166,7 +171,8 @@
 
     transition: transform 0.5s ease-in-out, opacity 0.2s ease-in-out;
     .button {
-      background-color: rgb(30, 102, 209);
+      //background-color: rgb(30, 102, 209);
+      background-color: transparent;
       border-radius: 50%;
       border: 1px solid black;
       cursor: pointer;
@@ -194,6 +200,14 @@
   }
   to {
     transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes load-in-title {
+  from {
+    opacity: 0;
+  }
+  to {
     opacity: 1;
   }
 }
